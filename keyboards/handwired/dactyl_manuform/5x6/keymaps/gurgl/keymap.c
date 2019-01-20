@@ -47,10 +47,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_RAISE] = LAYOUT_5x6(		
        KC_F12 , KC_F1 , KC_F2 , KC_F3 , KC_F4 , KC_F5 ,                        KC_F6  , KC_F7 , KC_F8 , KC_F9 ,KC_F10 ,KC_F11 ,
-       _______,_______,_______,KC_UP  ,_______,_______,                        KC_RBRC,_______,KC_NLCK,KC_INS ,KC_SLCK,KC_MUTE,
-       _______,_______,KC_LEFT,KC_DOWN,KC_RGHT,_______,                        KC_RPRN,KC_MPRV,KC_MPLY,KC_MNXT,KC_VOLU,KC_VOLD,
-       _______,_______,_______,_______,_______,_______,                        KC_RPRN,KC_MPRV,KC_MPLY,KC_MNXT,KC_VOLU,KC_VOLD,
-                                               _______,_______,            ALT_TAB,_______,
+       KC_RBRC,_______,KC_NLCK,KC_INS ,KC_SLCK,KC_MUTE,                       _______,_______,KC_UP  ,_______,_______,_______,
+       KC_RPRN,KC_MPRV,KC_MPLY,KC_MNXT,KC_VOLU,KC_VOLD,                       _______,KC_LEFT,KC_DOWN,KC_RGHT,_______,_______,
+       KC_RPRN,KC_MPRV,KC_MPLY,KC_MNXT,KC_VOLU,KC_VOLD,                       _______,_______,_______,_______,_______,_______,
+                                               _______,_______,            ALT_TAB,ALT_TAB,
                                                OSL(_RAISE),_______,        _______,OSL(_LOWER),
                                                KC_HOME,KC_END ,            KC_PGUP, KC_PGDN,
                                                _______,_______,            KC_BSPC,_______
