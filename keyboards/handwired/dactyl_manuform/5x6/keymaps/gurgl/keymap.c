@@ -1,12 +1,15 @@
 /* A standard layout for the Dactyl Manuform 5x6 Keyboard */
 
 #include QMK_KEYBOARD_H
+//#include quantum/keymap_extras/keymap_swedish.h
+#include "keymap_swedish.h"
 
 extern keymap_config_t keymap_config;
 
 #define _QWERTY 0
 #define _LOWER 1
 #define _RAISE 2
+#define _TOP 3
 
 #define RAISE MO(_RAISE)
 #define LOWER MO(_LOWER)
@@ -27,7 +30,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_LCTL, KC_Z  , KC_X  , KC_C  , KC_V  , KC_B  ,                         KC_N  , KC_M  ,KC_COMM,KC_DOT ,KC_SLSH,KC_BSLASH,
                       KC_DOWN,KC_UP  ,                                                       KC_LEFT,KC_RGHT,
                                       LT(RAISE,KC_TAB),KC_SPC,                           KC_SFTENT, LT(LOWER,KC_BSPC),
-                                      KC_LCTL,KC_LSFT,                        MT(MOD_LALT,KC_APP), KC_RCTL,
+                                      KC_LSFT,KC_LCTL,                        MT(MOD_LALT,KC_APP), KC_RCTL,
                                       KC_LALT, KC_TAB,                        KC_LGUI, MT(MOD_LALT,KC_APP)
 
   ),
@@ -35,38 +38,61 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_LOWER] = LAYOUT_5x6(
 
      KC_TILD,RALT(KC_1),RALT(KC_2),KC_DLR ,RALT(KC_4),RALT(KC_5),                  KC_CIRC,KC_AMPR,KC_ASTR,KC_LPRN,RALT(KC_9),RALT(KC_0),
-     _______,_______,_______,RALT(KC_8),RALT(KC_9),KC_LBRC,                        KC_NUBS, KC_P7 , KC_P8 , KC_P9 ,KC_PLUS,KC_NUBS,
-     RESET  ,_______,_______,LSFT(KC_8),LSFT(KC_9),KC_LPRN,                        KC_NUHS, KC_P4 , KC_P5 , KC_P6 ,KC_MINS,KC_QUOT,
-     KC_PIPE,_______,_______,RALT(KC_7),RALT(KC_0),_______,                        KC_EQL , KC_P1 , KC_P2 , KC_P3 ,KC_UNDS,KC_EQL ,
+     _______,_______,KC_VOLU,RALT(KC_8),RALT(KC_9),KC_LBRC,                        KC_GRV, KC_P7 , KC_P8 , KC_P9 ,KC_PLUS,KC_NUBS,
+     RESET  ,_______,KC_VOLD ,LSFT(KC_8),LSFT(KC_9),KC_LPRN,                        KC_NUHS, KC_P4 , KC_P5 , KC_P6 ,KC_MINS,KC_QUOT,
+     KC_PIPE,_______,_______,RALT(KC_7),RALT(KC_0),_______,                        NO_CIRC , KC_P1 , KC_P2 , KC_P3 ,KC_UNDS,KC_EQL ,
                      _______,KC_PSCR,                                                              ALT_TAB, KC_P0 ,
-                                         _______,KC_BSPC,                      KC_DEL,  RAISE,
+                                         OSM(MOD_RALT),KC_BSPC,                      KC_DEL,  RAISE,
                                          OSM(MOD_LCTL),OSM(MOD_LSFT),              KC_SFTENT, KC_RCTL,
                                          OSM(MOD_LALT), OSM(MOD_LGUI),                 KC_LGUI, KC_LALT
 
   ),
 
   [_RAISE] = LAYOUT_5x6(
-       KC_F12 , KC_F1 , KC_F2 , KC_F3 , KC_F4 , KC_F5 ,                       KC_F6  , KC_F7 , KC_F8 , KC_F9 ,KC_F10 ,KC_F11 ,
-       KC_INS,KC_MNXT,KC_NLCK,KC_LALT ,KC_SLCK,KC_MUTE,                       KC_PGUP,LCTL(KC_C),KC_UP ,LCTL(KC_V),LCTL(KC_Z),LSFT(KC_NUBS),
-       KC_DEL,KC_MPLY,KC_LALT ,KC_LCTL,LCTL(KC_LSFT),KC_VOLD,                 KC_PGDN,KC_LEFT,KC_DOWN,KC_RGHT,ALT_TAB,LCTL(KC_Z),
-       RALT(KC_NUBS),KC_MPRV,KC_INS,KC_MNXT,KC_LSFT,KC_VOLU,                  _______,KC_HOME,KC_END,LCTL(KC_Z),RALT(KC_MINS),LSFT(KC_EQL),
-                       _______,_______,                                               ALT_TAB,ALT_TAB,
+       KC_F12,        KC_F1 , KC_F2 , KC_F3   , KC_F4 , KC_F5 ,                       KC_F6  , KC_F7 , KC_F8 , KC_F9 ,KC_F10 ,KC_F11 ,
+       KC_INS,        KC_MNXT,KC_NLCK,KC_LALT ,KC_SLCK,KC_MUTE,                       KC_PGUP,LCTL(KC_C),KC_UP ,LCTL(KC_V),LCTL(KC_X),LSFT(KC_NUBS),
+       KC_DEL,        KC_MPLY,KC_LALT,KC_LCTL,LCTL(KC_LSFT),_______,                 KC_PGDN,KC_LEFT,KC_DOWN,KC_RGHT,ALT_TAB,LCTL(KC_Z),
+       RALT(KC_NUBS), KC_MPRV,_______,KC_LALT,KC_LSFT,KC_LCTL,                  _______,KC_HOME,KC_END,LCTL(KC_Z),RALT(KC_MINS),LSFT(KC_EQL),
+                              _______,_______,                                               ALT_TAB,ALT_TAB,
+                                               OSL(_RAISE),_______,        _______,OSL(_LOWER),
+                                               KC_HOME,KC_END ,            OSM(MOD_MEH), KC_PGDN,
+                                               _______,_______,            KC_BSPC,_______
+  ),
+  [_TOP] = LAYOUT_5x6(
+       KC_F12,        KC_F1 , KC_F2 , KC_F3   , KC_F4 , KC_F5 ,                       KC_F6  , KC_F7 , KC_F8 , KC_F9 ,KC_F10 ,KC_F11 ,
+       KC_INS,        KC_MNXT,KC_NLCK,KC_LALT ,KC_SLCK,KC_MUTE,                       KC_PGUP,LCTL(KC_C),KC_UP ,LCTL(KC_V),LCTL(KC_X),LSFT(KC_NUBS),
+       KC_DEL,        KC_MPLY,KC_LALT,KC_LCTL,LCTL(KC_LSFT),_______,                 KC_PGDN,KC_LEFT,KC_DOWN,KC_RGHT,ALT_TAB,LCTL(KC_Z),
+       RALT(KC_NUBS), KC_MPRV,KC_LALT,KC_MNXT,KC_LSFT,KC_LCTL,                  _______,KC_HOME,KC_END,LCTL(KC_Z),RALT(KC_MINS),LSFT(KC_EQL),
+                              _______,_______,                                               ALT_TAB,ALT_TAB,
                                                OSL(_RAISE),_______,        _______,OSL(_LOWER),
                                                KC_HOME,KC_END ,            KC_PGUP, KC_PGDN,
                                                _______,_______,            KC_BSPC,_______
   ),
+
+
 };
 
 // From https://www.reddit.com/r/olkb/comments/9ncbhu/brainstorming_for_a_onekey_alttab_function_what/
 
 /*
-        =  VAN   SHF   RALT
-KC_PLUS   = `     }
-KC_NUBS   = <     >
-KC_UNDS   = ?     .
-KC_BSLASH = '     *
-KC_EQL    = ´     `    ±
-KC_MINS   = +     ?    \
+QMK KEYCODES in SWEDISH LAYOUT
+
+          = VAN SHF RALT
+KC_BSLASH = '   *
+KC_EQL    = ´   `   ±
+KC_MINS   = +   ?   \
+KC_NUBS   = <   >
+KC_NUHS   = '   *
+KC_PLUS   = `   }
+KC_SLSH   = -   _   -
+KC_TILD   = ½
+KC_UNDS   = ?   .   ¿
+KC_QUOT   = ä   Ä   ä
+KC_GRV    = §   ½   ←
+KC_PAST   = *   *   *
+NO_CIRC   = ^   ^   n
+
+
 
 
 */
