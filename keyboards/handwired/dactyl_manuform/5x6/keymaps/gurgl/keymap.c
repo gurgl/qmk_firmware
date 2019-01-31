@@ -16,6 +16,8 @@ extern keymap_config_t keymap_config;
 
 #define _______ KC_TRNS
 
+#define TOP_RAI _RAISE | _TOP
+
 enum custm_keycodes {
   ALT_TAB = SAFE_RANGE,
 };
@@ -50,9 +52,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      _______,_______,KC_VOLU,RALT(KC_8),RALT(KC_9),KC_LBRC,                        KC_GRV, KC_P7 , KC_P8 , KC_P9 ,KC_PLUS,KC_NUBS,
      RESET  ,_______,KC_VOLD ,LSFT(KC_8),LSFT(KC_9),KC_LPRN,                        KC_NUHS, KC_P4 , KC_P5 , KC_P6 ,KC_MINS,KC_QUOT,
      KC_PIPE,_______,_______,RALT(KC_7),RALT(KC_0),_______,                        NO_CIRC , KC_P1 , KC_P2 , KC_P3 ,KC_UNDS,KC_EQL ,
-                     _______,KC_PSCR,                                                              TG(_TOP), KC_P0 ,
-                                         OSM(MOD_RALT), TG(_TOP),                      KC_DEL,  RAISE,
-                                         OSM(MOD_LSFT), OSM(MOD_LCTL),              KC_SFTENT, KC_RCTL,
+                     _______,KC_PSCR,                                                              TG(_RAISE), KC_P0 ,
+                                         OSM(MOD_RALT), TG(_RAISE),                      KC_DEL,  RAISE,
+                                         OSM(MOD_LSFT), OSM(MOD_LCTL),              OSL(_RAISE), KC_RCTL,
                                          OSM(MOD_LALT), OSM(MOD_LGUI),                 KC_LGUI, KC_LALT
   ),
 
@@ -61,18 +63,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_INS,        KC_MNXT,KC_NLCK,KC_LALT ,KC_SLCK,KC_MUTE,                       KC_PGUP,LCTL(KC_C),KC_UP ,LCTL(KC_V),LCTL(KC_X),LSFT(KC_NUBS),
        KC_DEL,        KC_MPLY,KC_LALT,KC_LCTL,LCTL(KC_LSFT),_______,                 KC_PGDN,KC_LEFT,KC_DOWN,KC_RGHT,ALT_TAB,LCTL(KC_Z),
        RALT(KC_NUBS), KC_MPRV,_______,KC_LALT,KC_LSFT,KC_LCTL,                  _______,KC_HOME,KC_END,LCTL(KC_Z),RALT(KC_MINS),LSFT(KC_EQL),
-                              _______,_______,                                               ALT_TAB,ALT_TAB,
-                                               OSL(_RAISE),_______,        _______,OSL(_LOWER),
-                                               KC_HOME,KC_END ,            OSM(MOD_MEH), KC_PGDN,
-                                               _______,_______,            KC_BSPC,_______
+                              OSM(MOD_MEH),_______,                                               _______,_______,
+                                               _______,_______,                 _______,_______,
+                                               _______,_______,                 _______,_______,
+                                               _______,_______,                 _______,_______
   ),
   [_TOP] = LAYOUT_5x6(
-       KC_F12,        KC_F1 , KC_F2 , KC_F3   , KC_F4 , KC_F5 ,                       KC_F6  , KC_F7 , KC_F8 , KC_F9 ,KC_F10 ,KC_F11 ,
-       KC_INS,        KC_MNXT,KC_NLCK,KC_LALT ,KC_SLCK,KC_MUTE,                       KC_PGUP,LCTL(KC_C),KC_UP ,LCTL(KC_V),LCTL(KC_X),LSFT(KC_NUBS),
-       KC_DEL,        KC_MPLY,KC_LALT,KC_LCTL,LCTL(KC_LSFT),_______,                 KC_PGDN,KC_LEFT,KC_DOWN,KC_RGHT,ALT_TAB,LCTL(KC_Z),
-       RALT(KC_NUBS), KC_MPRV,KC_LALT,KC_MNXT,KC_LSFT,KC_LCTL,                  _______,KC_HOME,KC_END,LCTL(KC_Z),RALT(KC_MINS),LSFT(KC_EQL),
-                              _______,_______,                                               TG(_TOP),ALT_TAB,
-                                               OSL(_RAISE),_______,        _______,OSL(_LOWER),
+       KC_F12 ,KC_F1  , KC_F2 , KC_F3 , KC_F4 , KC_F5 ,                       KC_F6  , KC_F7 , KC_F8 , KC_F9 ,KC_F10 ,KC_F11 ,
+       _______,_______,_______,_______,_______,_______,                       _______,_______,_______,_______,_______,_______,
+       _______,_______,_______,_______,_______,_______,                       _______,_______,_______,_______,_______,_______,
+       _______,_______,_______,_______,_______,_______,                       _______,_______,_______,_______,_______,_______,
+                              _______,_______,                                               _______,ALT_TAB,
+                                               _______,_______,        _______,_______,
                                                KC_LSFT,KC_LCTL,                        MT(MOD_LALT,KC_APP), KC_RCTL,
                                                KC_LALT, KC_TAB,                        KC_LGUI, MT(MOD_LALT,KC_APP)
    ),
