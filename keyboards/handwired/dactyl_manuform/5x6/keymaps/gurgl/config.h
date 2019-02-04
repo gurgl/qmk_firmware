@@ -30,3 +30,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define ALTTABF LALT(KC_TAB)
 //#define ALTTABB LALT(LSFT(KC_TAB))
 
+
+/*
+ * below from https://github.com/qmk/qmk_firmware/issues/4334
+ */
+ 
+// Settings for One Shot Mods (i.e, OSM()).
+#define IGNORE_MOD_TAP_INTERRUPT
+#define TAPPING_TERM 300
+#define ONESHOT_TAP_TOGGLE 3  /* Tapping this number of times holds the key until tapped this number of times again. */
+#define ONESHOT_TIMEOUT 3000  /* Time (in ms) before the one shot key is released */
