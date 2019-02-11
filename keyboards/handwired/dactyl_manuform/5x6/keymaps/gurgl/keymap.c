@@ -55,9 +55,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LCTL(KC_Z),   ALT_TAB,      KC_LEFT,   KC_DOWN,   KC_RGHT,   KC_PGDN,     _______,   LCTL(KC_LSFT),KC_LCTL, KC_LALT,      KC_MPLY,   KC_DEL,
     LSFT(KC_EQL), RALT(KC_MINS),KC_HOME,   KC_END,    LCTL(KC_Z),_______,     KC_LCTL,   KC_LSFT,      KC_LALT, _______,      KC_MPRV,   RALT(KC_NUBS),
                      _______,KC_PSCR,                                                TG(_RAISE), KC_P0 ,
-                                         OSM(MOD_RALT), TG(_RAISE),           KC_DEL,  RAISE,
-                                         OSM(MOD_LSFT), OSM(MOD_LCTL),        OSL(_RAISE), KC_RCTL,
-                                         OSM(MOD_LALT), OSM(MOD_LGUI),        KC_LGUI, KC_LALT
+                                                _______,_______,              _______,_______,
+                                                _______,_______,              _______,_______,
+                                                _______,_______,              _______,_______
   ),
   /*[_LOWER_OLD] = LAYOUT_5x6(
 
@@ -76,10 +76,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, KC_P7 , KC_P8 , KC_P9 ,KC_PLUS,KC_NUBS,                          OSL(_TOP),KC_NUBS,   LSFT(KC_NUBS),_______,   KC_VOLU,    _______,
     KC_NUHS, KC_P4 , KC_P5 , KC_P6 ,KC_MINS,KC_QUOT,                          KC_VOLU,  LSFT(KC_8),LSFT(KC_9),   RALT(KC_8),RALT(KC_9), KC_LPRN,
     NO_CIRC, KC_P1 , KC_P2 , KC_P3 ,KC_UNDS,KC_EQL ,                          KC_VOLD,  RALT(KC_7),RALT(KC_0),   KC_PIPE,   _______,    KC_GRV,
-                          OSM(MOD_MEH),_______,                                               _______,_______,
-                                               _______,_______,               _______,_______,
-                                               _______,_______,               _______,_______,
-                                               _______,_______,               _______,_______
+                          _______,_______,                                          OSM(MOD_MEH),_______,
+                                                KC_DEL,  RAISE,               OSM(MOD_RALT), TG(_RAISE),
+                                                OSL(_RAISE), KC_RCTL,         OSM(MOD_LSFT), OSM(MOD_LCTL),
+                                                KC_LGUI, KC_LALT,             OSM(MOD_LALT), OSM(MOD_LGUI)
   ),
   /*[_RAISE_OLD] = LAYOUT_5x6(
     KC_F12,        KC_F1 , KC_F2 , KC_F3   , KC_F4 , KC_F5 ,                  KC_F6  , KC_F7 , KC_F8 , KC_F9 ,KC_F10 ,KC_F11 ,
