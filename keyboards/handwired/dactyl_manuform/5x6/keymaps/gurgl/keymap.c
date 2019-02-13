@@ -18,6 +18,8 @@ extern keymap_config_t keymap_config;
 #define _____________ KC_TRNS
 //      LCTL(KC_LSFT)
 
+#define MC_SFTGUICTL LCTL(KC_LGUI | KC_LSFT)
+
 #define TOP_RAI _RAISE | _TOP
 
 enum custm_keycodes {
@@ -29,7 +31,6 @@ enum custm_keycodes {
 PROBLEMS
 
 * Hard to combine F keys with modifiers
-* To much modifiers on left handc when used in combination with arrows
 * a bit disturbing to have important keys like bkspace and enter activate on release
 
 */
@@ -51,9 +52,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_LOWER] = LAYOUT_5x6(
 
     KC_TILD,RALT(KC_1),RALT(KC_2),RALT(KC_3),RALT(KC_4),   RALT(KC_5),        RALT(KC_6),    RALT(KC_7),RALT(KC_8),RALT(KC_9),RALT(KC_0),RALT(KC_MINS),
-    KC_INS,  _______,   KC_HOME,   KC_UP ,    KC_END,    KC_PGUP,             _______,   _______,LCTL(KC_LALT),_______,KC_MNXT,   KC_VOLU,
-    KC_DEL,  ALT_TAB,   KC_LEFT,   KC_DOWN,   KC_RGHT,   KC_PGDN,             ALT_TAB,   KC_LCTL,LCTL(KC_LSFT),KC_LALT,KC_MPLY,   KC_VOLD,
-    _______, LCTL(KC_X),LCTL(KC_V),LCTL(KC_C),LCTL(KC_Z),_______,             KC_LCTL,   KC_LSFT,LALT(KC_LSFT),_______,KC_MPRV,   KC_MUTE,
+    KC_INS,  KC_GRV,    KC_HOME,   KC_UP ,    KC_END,    KC_PGUP,             KC_MEH,LCTL(KC_LGUI),LCTL(KC_LALT),_______,KC_MNXT,   KC_VOLU,
+    KC_DEL,  ALT_TAB,   KC_LEFT,   KC_DOWN,   KC_RGHT,   KC_PGDN,             ALT_TAB,     KC_LCTL,LCTL(KC_LSFT),KC_LALT,KC_MPLY,   KC_VOLD,
+    _______,_______, LCTL(KC_X),LCTL(KC_C),LCTL(KC_V),LCTL(KC_Z),             KC_LGUI,     KC_LSFT,LALT(KC_LSFT),_______,KC_MPRV,   KC_MUTE,
                      KC_SLCK,KC_PSCR,                                                TG(_LOWER), _______ ,
                                                 _______,_______,              _______,_______,
                                                 _______,_______,              _______,_______,
@@ -64,10 +65,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_RAISE] = LAYOUT_5x6(
     KC_F12,  KC_F1 , KC_F2 , KC_F3 ,KC_F4,  KC_F5 ,                           KC_F6,    KC_F7,     KC_F8,      KC_F9,     KC_F10,          KC_F11 ,
     KC_PLUS,KC_PSLS,KC_P7 , KC_P8 , KC_P9 ,KC_NLCK,                           OSL(_TOP),KC_NUBS,   LSFT(KC_NUBS),LSFT(KC_EQL), KC_EQL,       KC_PLUS,
-    KC_MINS,_______,KC_P4 , KC_P5 , KC_P6 ,KC_NUHS,                           KC_VOLU,  LSFT(KC_8),LSFT(KC_9),   RALT(KC_8),RALT(KC_9),    KC_LPRN,
-    KC_UNDS,_______,KC_P1 , KC_P2 , KC_P3 ,NO_CIRC,                           KC_VOLD,  RALT(KC_7),RALT(KC_0),   KC_PIPE,   RALT(KC_NUBS), KC_GRV,
+    KC_MINS,_______,KC_P4 , KC_P5 , KC_P6 ,KC_NUHS,                           _______,  LSFT(KC_8),LSFT(KC_9),   RALT(KC_8),RALT(KC_9),    KC_LPRN,
+    KC_UNDS,_______,KC_P1 , KC_P2 , KC_P3 ,NO_CIRC,                           _______,  RALT(KC_7),RALT(KC_0),   KC_PIPE,   RALT(KC_NUBS), KC_GRV,
                           KC_P0,TG(_RAISE),                                          OSM(MOD_MEH),_______,
-                                                KC_DEL,  RAISE,               OSM(MOD_RALT), TG(_RAISE),
+                                                KC_DEL,  RAISE,               OSM(MOD_RALT), KC_DEL,
                                                 OSL(_RAISE), KC_RCTL,         OSM(MOD_LSFT), OSM(MOD_LCTL),
                                                 KC_LGUI, KC_LALT,             OSM(MOD_LALT), OSM(MOD_LGUI)
   ),
