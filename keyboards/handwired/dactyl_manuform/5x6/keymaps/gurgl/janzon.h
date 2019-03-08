@@ -1,0 +1,53 @@
+#define KC_SWLBRC LALT(KC_LBRC)
+#define KC_SWQUOT LALT(KC_QUOT)
+#define KC_SWSCLN LALT(KC_SCLN)
+#define KC_MYSFT MT(MOD_LSFT, KC_ENT)
+#define KC_MYSYM LT(_SYM, KC_TAB)
+#define KC_MYALT MT(MOD_RALT, KC_TAB)
+#define KC_MYGUI MT(MOD_LGUI, KC_F3)
+#define KC_MYTAB LT(_SYS, KC_ESC)
+#define KC_MYBSPC MT(MOD_RCTL, KC_BSPC)
+#define KC_GMESC LT(_GFN, KC_ESC)
+#define KC_WIN_BSLS RALT(KC_MINS)
+
+#define KC_ARING KC_LBRC
+#define KC_OUML KC_SCLN
+#define KC_AUML KC_QUOT
+
+#define KC_SE_SLSH S(KC_7)
+#define KC_SE_AT LALT(KC_2)
+#define KC_SE_AMPR S(KC_6)
+#define KC_SE_LPRN S(KC_8)
+#define KC_SE_RPRN S(KC_9)
+#define KC_SE_QUOT KC_BSLS
+#define KC_SE_DQUO S(KC_2)
+#define KC_SE_DLR LALT(KC_4)
+#define KC_SE_LCBR S(LALT(KC_8))
+#define KC_SE_RCBR S(LALT(KC_9))
+#define KC_SE_LBRC LALT(KC_8)
+#define KC_SE_RBRC LALT(KC_9)
+#define KC_SE_EQL S(KC_0)
+#define KC_SE_GBP LALT(KC_3)
+#define KC_SE_TILD RALT(KC_RBRC)
+#define KC_SE_EURO LALT(KC_E)
+#define KC_SE_AA KC_LBRC
+#define KC_SE_OE KC_SCLN
+#define KC_SE_AE KC_QUOT
+#define KC_SE_PLAYP KC_MEDIA_PLAY_PAUSE
+#define KC_SE_MUTE KC_AUDIO_MUTE
+#define KC_SE_CIRC KC_RCBR
+#define KC_SE_PARA KC_GRAVE
+#define KC_SE_HALF KC_TILD
+#define KC_SE_ACUT KC_EQL
+#define KC_SE_GRAV KC_PLUS
+#define KC_SE_GT S(KC_GRV)
+#define KC_SE_LT KC_GRV
+#define KC_SE_PLUS KC_MINS
+#define KC_SE_ASTR KC_PIPE
+#define KC_SE_QUES S(KC_MINS)
+#define KC_SE_BSLS S(LALT(KC_7))
+#define KC_SE_PIPE LALT(KC_7)
+#define KC_SE_SCLN S(KC_COMM)
+#define KC_SE_COLN S(KC_DOT)
+#define KC_SE_MINS KC_SLSH
+#define KC_SE_UNDS S(KC_SLSH)
