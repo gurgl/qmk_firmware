@@ -55,8 +55,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     KC_TILD,RALT(KC_1),RALT(KC_2),RALT(KC_3),RALT(KC_4),   RALT(KC_5),        RALT(KC_6),    RALT(KC_7),RALT(KC_8),RALT(KC_9),RALT(KC_0),RALT(KC_MINS),
     KC_INS,  KC_GRV,    KC_HOME,   KC_UP ,    KC_END,    KC_PGUP,             ALT_TAB,     LCTL(KC_LGUI), _______,      KC_MINS,KC_MNXT,   KC_VOLU,
-    KC_DEL,  ALT_TAB,   KC_LEFT,   KC_DOWN,   KC_RGHT,   KC_PGDN,             OSM(MOD_MEH),LALT(KC_LSFT), LCTL(KC_LSFT),LCTL(KC_LALT),KC_MPLY,   KC_VOLD,
-    OSL(_TOP),_______, LCTL(KC_X),LCTL(KC_C),LCTL(KC_V),LCTL(KC_Z),             KC_LGUI,     KC_LCTL,       KC_LSFT,      KC_LALT,KC_MPRV,   KC_MUTE,
+    _______,  ALT_TAB,   KC_LEFT,   KC_DOWN,   KC_RGHT,   KC_PGDN,             OSM(MOD_MEH),LALT(KC_LSFT), LCTL(KC_LSFT),LCTL(KC_LALT),KC_MPLY,   KC_VOLD,
+    _______,_______, LCTL(KC_X),LCTL(KC_C),LCTL(KC_V),LCTL(KC_Z),             KC_LGUI,     KC_LCTL,       KC_LSFT,      KC_LALT,KC_MPRV,   KC_MUTE,
                      KC_SLCK,KC_PSCR,                                                _______,_______,
                                                 _______,_______,              _______,_______,
                                                 _______,_______,              _______,_______,
@@ -67,9 +67,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_RAISE] = LAYOUT_5x6(
     KC_F12,  KC_F1 , KC_F2 , KC_F3 ,KC_F4,  KC_F5 ,                           KC_F6,      KC_F7,     KC_F8,      KC_F9,     KC_F10,          KC_F11 ,
     KC_PAST,KC_PSLS,KC_P7 , KC_P8 , KC_P9 ,KC_NLCK,                           KC_PAST,  KC_NUBS,   LSFT(KC_NUBS),RALT(KC_7),RALT(KC_0),       NO_CIRC,
-    KC_PPLS,KC_PMNS,KC_PIPE ,LSFT(KC_EQL), KC_EQL,   KC_NUHS,                 RALT(KC_MINS), LSFT(KC_8),LSFT(KC_9),   RALT(KC_8),RALT(KC_9),    KC_LPRN,
-    KC_UNDS,_______,KC_LALT,  KC_LSFT,KC_LCTL,KC_PLUS,                        KC_LGUI,     KC_LCTL,       KC_LSFT,      KC_LALT,   RALT(KC_NUBS), KC_GRV,
-                          TG(_RAISE),KC_P0  ,                                          _______,KC_SE_TILD,
+    _______,KC_PPLS,KC_PIPE ,LSFT(KC_EQL), KC_EQL,   KC_NUHS,                 RALT(KC_MINS), LSFT(KC_8),LSFT(KC_9),   RALT(KC_8),RALT(KC_9),    KC_LPRN,
+    _______,KC_UNDS,KC_LALT,  KC_LSFT,KC_LCTL,KC_PLUS,                        KC_LGUI,     KC_LCTL,       KC_LSFT,      KC_LALT,   RALT(KC_NUBS), KC_GRV,
+                          OSL(_TOP),KC_P0  ,                                          _______,KC_SE_TILD,
                                                 _______,_______,              _______,KC_BSPC,
                                                 _______,_______,              _______,_______,
                                                 _______,_______,              _______,_______
@@ -110,7 +110,8 @@ NO_CIRC   = ^   ^   n
 ||||§§§½½½½½||||§§§§
 ¨̈́'äää`~~~~`'
 
-
+~ : RAISE
+^ : RAISE
 
 
 */
