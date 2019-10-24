@@ -67,9 +67,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_RAISE] = LAYOUT_5x6(
     KC_F12,  KC_F1 , KC_F2 , KC_F3 ,KC_F4,  KC_F5 ,                           KC_F6,      KC_F7,     KC_F8,      KC_F9,     KC_F10,          KC_F11 ,
     KC_PAST,KC_PSLS,KC_P7 , KC_P8 , KC_P9 ,KC_NLCK,                           KC_PAST,  KC_NUBS,   LSFT(KC_NUBS),RALT(KC_7),RALT(KC_0),       NO_CIRC,
-    _______,KC_PPLS,KC_PIPE ,LSFT(KC_EQL), KC_EQL,   KC_NUHS,                 RALT(KC_MINS), LSFT(KC_8),LSFT(KC_9),   RALT(KC_8),RALT(KC_9),    KC_LPRN,
-    _______,KC_UNDS,KC_LALT,  KC_LSFT,KC_LCTL,KC_PLUS,                        KC_LGUI,     KC_LCTL,       KC_LSFT,      KC_LALT,   RALT(KC_NUBS), KC_GRV,
-                          OSL(_TOP),KC_P0  ,                                          _______,KC_SE_TILD,
+    _______,KC_PPLS,KC_PIPE ,LSFT(KC_EQL), KC_EQL,   KC_GRV,                 RALT(KC_MINS), LSFT(KC_8),LSFT(KC_9),   RALT(KC_8),RALT(KC_9),    KC_SE_TILD,
+    _______,KC_UNDS,KC_LALT,  KC_LSFT,KC_LCTL,RALT(KC_NUBS),                        KC_LGUI,     KC_LCTL,       KC_LSFT,      KC_LALT, KC_UP,   KC_DOWN ,
+                          OSL(_TOP),KC_P0  ,                                          KC_LEFT,KC_RGHT,
                                                 _______,_______,              _______,KC_BSPC,
                                                 _______,_______,              _______,_______,
                                                 _______,_______,              _______,_______
